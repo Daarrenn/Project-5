@@ -1,5 +1,8 @@
 void setup() {
 
+color skin = #F7B989;
+color yellow = #FAD70F;
+  
 size(600, 600);
 background(193, 148, 64);
 fill(250, 228, 154);
@@ -33,13 +36,34 @@ rect(290, 190, 20, 10);
 rect(200, 197, 200, 3);
 
 //fingers under
+//pointer
 pushMatrix();
 translate(385, 378);
 rotate(radians(12));
-fill(247, 185, 137);
+fill(skin);
 ellipse(0, 0, 35, 22);
 popMatrix();
 
+pushMatrix();
+translate(408, 393);
+rotate(radians(48));
+fill(skin);
+ellipse(0, 0, 40, 22);
+popMatrix();
+
+pushMatrix();
+translate(420, 420);
+rotate(radians(76));
+fill(skin);
+ellipse(0, 0, 50, 25);
+popMatrix();
+
+pushMatrix();
+translate(422, 440);
+rotate(radians(70));
+fill(skin);
+ellipse(0, 0, 55, 40);
+popMatrix();
 //controllerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 fill(255);
 pushMatrix();
@@ -74,7 +98,7 @@ circle(375, 400, 12); //Y
 circle(387, 412, 12); //B
 circle(375, 424, 12); //A
 circle(363, 412, 12); //X
-fill(250, 215, 15);
+fill(#FAD70F);
 text("Y", 372.45, 403);
 fill(250, 39, 15);
 text("B", 384.45, 415);
@@ -86,24 +110,64 @@ text("X", 360.45, 415);
 
 
 
+//thumb
+pushMatrix();
+translate(340, 440);
+rotate(radians(45));
+fill(skin);
+ellipse(0, 0, 45, 30);
+popMatrix();
+
+pushMatrix();
+translate(350, 450);
+rotate(radians(48));
+fill(skin);
+ellipse(0, 0, 40, 30);
+popMatrix();
+
+pushMatrix();
+translate(366, 470);
+rotate(radians(45));
+fill(skin);
+ellipse(0, 0, 55, 37);
+popMatrix();
+
+pushMatrix();
+translate(387, 500);
+rotate(radians(45));
+fill(skin);
+ellipse(0, 0, 80, 60);
+popMatrix();
+
+//the webbed part of the hand between the thumb and the pointer finger. Je ne sais pas what its called
+pushMatrix();
+translate(410, 490);
+rotate(radians(-35));
+fill(skin);
+ellipse(0, 0, 96, 70);
+popMatrix();
+//arm
+pushMatrix();
+translate(420, 560);
+rotate(radians(78));
+fill(skin);
+ellipse(0, 0, 155, 85);
+popMatrix();
+
+strokeWeight(10);
+stroke(skin);
+line(455, 560, 440, 445);
+}
+
+void mouseReleased(){
+
+}
+  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void button(int x, int y, color colours) {
+  if (dist(x, y, mouseX, mouseY) < 6) {
+    fill(colours);
+    rect(155, 50, 290, 135);
+  }
 }
