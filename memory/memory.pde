@@ -1,7 +1,13 @@
-void setup() {
-
 color skin = #F7B989;
 color yellow = #FAD70F;
+color red = #FA270F;
+color green = #83E543;
+color blue = #21B3FF;
+color colours = #000000;
+
+
+
+void setup() {
   
 size(600, 600);
 background(193, 148, 64);
@@ -22,7 +28,9 @@ for(int x = 0;  x <= width;  x = x + 50) {
   offset = 0;
 }
 }
+}
 
+void draw() {
 //televisionnnnnnnnnnnnnnnnnnnnnnn
 fill(137, 105, 40);
 rect(100, 200, 400, 125);
@@ -98,13 +106,13 @@ circle(375, 400, 12); //Y
 circle(387, 412, 12); //B
 circle(375, 424, 12); //A
 circle(363, 412, 12); //X
-fill(#FAD70F);
+fill(yellow);
 text("Y", 372.45, 403);
-fill(250, 39, 15);
+fill(red);
 text("B", 384.45, 415);
-fill(131, 229, 67);
+fill(green);
 text("A", 372.45, 427);
-fill(33, 179, 255);
+fill(blue);
 text("X", 360.45, 415);
 
 
@@ -157,17 +165,23 @@ popMatrix();
 strokeWeight(10);
 stroke(skin);
 line(455, 560, 440, 445);
+
+noStroke();
+fill(colours);
+rect(153, 48, 295, 140); 
 }
 
 void mouseReleased(){
-
+  button(375, 400, yellow);
+  button(387, 412, red);
+  button(375, 424, green);
+  button(363, 412, blue);
 }
   
 
-
-void button(int x, int y, color colours) {
+void button(float x, float y, color colourss) {
   if (dist(x, y, mouseX, mouseY) < 6) {
-    fill(colours);
-    rect(155, 50, 290, 135);
+    colours = colourss;
+   
   }
 }
